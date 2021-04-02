@@ -1,0 +1,37 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core"
+   xmlns:l="sap.ui.layout"
+   xmlns:f="sap.ui.layout.form">
+   <Dialog id="copyDialog"
+      title="{i18n>SelectSEBGroupCopy}">
+   	 <beginButton>
+   	 	<Button text="{i18n>CopySEBGroup}" press="onCopy"></Button>
+   	 </beginButton>
+   	 <endButton>
+   	 	<Button text="{i18n>Cancel}" press="onCancel"></Button>
+   	 </endButton>
+   	 <content>
+		<f:SimpleForm id="copyForm"
+			editable="true"
+			layout="ColumnLayout"
+			title="Address" >
+			<f:content>
+				<Label text="{i18n>SEBGroup}" />
+				<Select id="SEBGroupToCopy"
+					selectedKey="{/SelectedProduct}"
+					items="{
+						path: '/ZCO_AOH_C_SEB_HDR',
+						filters: [{path: 'IsActiveEntity', operator: 'EQ', value1: true}}
+					}"
+					required="true">
+					<core:Item key="{SebID}" text="{SebGroup} / {ControllingArea} / {Sender Company Code}" />
+				</Select>
+				<Label text="{i18n>NewSEBGroupName}" />
+				<Input id="newSEBGroup" required="true">
+				
+			</f:content>
+		</f:SimpleForm>	 	
+   	 </content>
+   </Dialog>
+</core:FragmentDefinition>

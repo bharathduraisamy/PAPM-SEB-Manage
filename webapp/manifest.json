@@ -1,0 +1,197 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "ZCO_AOH_PAPM_MANAGE_SEB",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"tags": {
+			"keywords": []
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/opu/odata/sap/ZCO_AOH_C_SEB_HDR_SRV/",
+				"type": "OData",
+				"settings": {
+					"annotations": [
+						"ZCO_AOH_C_SEB_HDR_ANNO_MDL"
+					],
+					"localUri": "localService/metadata.xml"
+				}
+			},
+			"ZCO_AOH_C_SEB_HDR_ANNO_MDL": {
+				"uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZCO_AOH_C_SEB_HDR_ANNO_MDL',Version='0001')/$value/",
+				"type": "ODataAnnotation",
+				"settings": {
+					"localUri": "localService/ZCO_AOH_C_SEB_HDR_ANNO_MDL.xml"
+				}
+			}
+		},
+		"offline": false,
+		"sourceTemplate": {
+			"id": "ui5template.smartTemplate",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_fiori_3"
+		]
+	},
+	"sap.ui5": {
+		"resources": {
+			"js": [],
+			"css": []
+		},
+		"dependencies": {
+			"minUI5Version": "1.56.6",
+			"libs": {
+				"sap.suite.ui.generic.template": {
+					"lazy": false
+				},
+				"sap.ui.core": {
+					"lazy": false
+				},
+				"sap.ui.generic.app": {
+					"lazy": false
+				}
+			},
+			"components": {}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"@i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"i18n|sap.suite.ui.generic.template.ListReport|ZCO_AOH_C_SEB_HDR": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/ListReport/ZCO_AOH_C_SEB_HDR/i18n.properties"
+			},
+			"i18n|sap.suite.ui.generic.template.ObjectPage|ZCO_AOH_C_SEB_HDR": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/ObjectPage/ZCO_AOH_C_SEB_HDR/i18n.properties"
+			},
+			"i18n|sap.suite.ui.generic.template.ObjectPage|ZCO_AOH_C_SEB_ITM": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/ObjectPage/ZCO_AOH_C_SEB_ITM/i18n.properties"
+			},
+			"": {
+				"dataSource": "mainService",
+				"preload": true,
+				"settings": {
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Inline",
+					"refreshAfterChange": true,
+					"metadataUrlParams": {
+						"sap-value-list": "none"
+					}
+				}
+			}
+		},
+		"extends": {
+			"extensions": {
+				"sap.ui.controllerExtensions": {
+					"sap.suite.ui.generic.template.ObjectPage.view.Details": {
+						"controllerName": "ZCO_AOH_PAPM_MANAGE_SEB.ext.controller.ObjectPageExt",
+						"sap.ui.generic.app": {
+							"ZCO_AOH_C_SEB_ITM": {
+								"EntitySet": "ZCO_AOH_C_SEB_ITM"
+							}
+						}
+					},
+					"sap.suite.ui.generic.template.ListReport.view.ListReport": {
+						"controllerName": "ZCO_AOH_PAPM_MANAGE_SEB.ext.controller.ListReportExt",
+						"sap.ui.generic.app": {
+							"ZCO_AOH_C_SEB_HDR": {
+								"EntitySet": "ZCO_AOH_C_SEB_HDR",
+								"Actions": {
+									"ActionZCO_AOH_C_SEB_HDR1": {
+										"id": "ActionZCO_AOH_C_SEB_HDR1button",
+										"text": "{@i18n>ActionZCO_AOH_C_SEB_HDR1}",
+										"press": "onClickActionZCO_AOH_C_SEB_HDR1"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	},
+	"sap.ui.generic.app": {
+		"_version": "1.3.0",
+		"settings": {
+			"forceGlobalRefresh": false,
+			"objectPageHeaderType": "Dynamic",
+			"showDraftToggle": false
+		},
+		"pages": {
+			"ListReport|ZCO_AOH_C_SEB_HDR": {
+				"entitySet": "ZCO_AOH_C_SEB_HDR",
+				"component": {
+					"name": "sap.suite.ui.generic.template.ListReport",
+					"list": true,
+					"settings": {
+						"filterSettings": {
+							"dateSettings": {
+								"useDateRange": true
+							}
+						},
+						"smartVariantManagement": true,
+						"condensedTableLayout": false
+					}
+				},
+				"pages": {
+					"ObjectPage|ZCO_AOH_C_SEB_HDR": {
+						"entitySet": "ZCO_AOH_C_SEB_HDR",
+						"component": {
+							"name": "sap.suite.ui.generic.template.ObjectPage"
+						},
+						"pages": {
+							"ObjectPage|to_items": {
+								"navigationProperty": "to_items",
+								"entitySet": "ZCO_AOH_C_SEB_ITM",
+								"component": {
+									"name": "sap.suite.ui.generic.template.ObjectPage"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": ""
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zco_aoh_seb/webapp",
+		"_version": "1.1.0"
+	}
+}

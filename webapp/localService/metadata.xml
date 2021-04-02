@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:Reference
+		Uri="https://webidecp-s3td7fnnd5.dispatcher.hana.ondemand.com/destinations/S4C011_WebIDE_SSO/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-s3td7fnnd5.dispatcher.hana.ondemand.com/destinations/S4C011_WebIDE_SSO/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-s3td7fnnd5.dispatcher.hana.ondemand.com/destinations/S4C011_WebIDE_SSO/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-s3td7fnnd5.dispatcher.hana.ondemand.com/destinations/S4C011_WebIDE_SSO/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-s3td7fnnd5.dispatcher.hana.ondemand.com/destinations/S4C011_WebIDE_SSO/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-s3td7fnnd5.dispatcher.hana.ondemand.com/destinations/S4C011_WebIDE_SSO/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-s3td7fnnd5.dispatcher.hana.ondemand.com/destinations/S4C011_WebIDE_SSO/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-s3td7fnnd5.dispatcher.hana.ondemand.com/destinations/S4C011_WebIDE_SSO/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-s3td7fnnd5.dispatcher.hana.ondemand.com/destinations/S4C011_WebIDE_SSO/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZCO_AOH_C_SEB_HDR_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="I_CalendarMonthType" sap:label="Calendar Month" sap:content-version="1">
+				<Key><PropertyRef Name="CalendarMonth"/></Key><Property Name="CalendarMonth" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="NonNegative"
+					sap:text="CalendarMonth_Text" sap:label="Calendar Month"/><Property Name="CalendarMonth_Text" Type="Edm.String" MaxLength="60" sap:label="Short Descript." sap:quickinfo="Short Text for Fixed Values"
+					sap:creatable="false" sap:updatable="false"/><NavigationProperty Name="to_Text" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_115EABD946727067A42853342D65AC71"
+					FromRole="FromRole_assoc_115EABD946727067A42853342D65AC71" ToRole="ToRole_assoc_115EABD946727067A42853342D65AC71"/></EntityType>
+			<EntityType Name="I_CalendarMonthTextType" sap:label="Calendar Month Text" sap:content-version="1">
+				<Key><PropertyRef Name="CalendarMonth"/><PropertyRef Name="Language"/></Key><Property Name="CalendarMonth" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="NonNegative" sap:label="Calendar Month"/><Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Lang." sap:quickinfo="Language Key"/><Property Name="CalendarMonthName" Type="Edm.String" MaxLength="60" sap:label="Short Descript." sap:quickinfo="Short Text for Fixed Values"/></EntityType>
+			<EntityType Name="I_CalendarYearType" sap:label="Year" sap:content-version="1">
+				<Key><PropertyRef Name="CalendarYear"/></Key><Property Name="CalendarYear" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Calendar Year"/><Property Name="IsLeapYear" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Is Leap Year"/><Property Name="NumberOfDays" Type="Edm.Int32" sap:label="Number of Days" sap:quickinfo="Number of Days in Year or Month"/></EntityType>
+			<EntityType Name="I_CurrencyTextType" sap:label="Currency Text" sap:content-version="1">
+				<Key><PropertyRef Name="Language"/><PropertyRef Name="Currency"/></Key><Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Language Key"/><Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Currency" sap:quickinfo="Currency Key"
+					sap:semantics="currency-code"/><Property Name="CurrencyName" Type="Edm.String" MaxLength="40" sap:label="Description"/><Property Name="CurrencyShortName" Type="Edm.String" MaxLength="15" sap:label="Short text"/></EntityType>
+			<EntityType Name="I_Customer_VHType" sap:label="Customer" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="Customer"/></Key><Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="CustomerName"
+					sap:label="Customer" sap:quickinfo="Customer Number"/><Property Name="OrganizationBPName1" Type="Edm.String" MaxLength="35" sap:label="Name 1"/><Property Name="OrganizationBPName2" Type="Edm.String" MaxLength="35" sap:label="Name 2"/><Property Name="Country" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Country" sap:quickinfo="Country Key"/><Property Name="CityName" Type="Edm.String" MaxLength="35" sap:label="City"/><Property Name="StreetName" Type="Edm.String" MaxLength="35" sap:label="Street" sap:quickinfo="Street and House Number"/><Property Name="CustomerName" Type="Edm.String" MaxLength="80" sap:label="Customer Name" sap:quickinfo="Name of Customer"/><Property Name="CustomerAccountGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Account group"
+					sap:quickinfo="Customer Account Group"/><Property Name="AuthorizationGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Authorization"
+					sap:quickinfo="Authorization Group"/><Property Name="IsBusinessPurposeCompleted" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Purpose Complete Flag"
+					sap:quickinfo="Business Purpose Completed Flag"/></EntityType>
+			<EntityType Name="I_DraftAdministrativeDataType" sap:label="Draft Administration Data" sap:content-version="1">
+				<Key><PropertyRef Name="DraftUUID"/><PropertyRef Name="DraftEntityType"/></Key><Property Name="DraftUUID" Type="Edm.Guid" Nullable="false" sap:label="Draft (Technical ID)"/><Property Name="DraftEntityType" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase"
+					sap:label="Draft Entity ID"/><Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Created On"/><Property Name="CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="CreatedByUserDescription"
+					sap:label="Draft Created By"/><Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Last Changed On"/><Property Name="LastChangedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="LastChangedByUserDescription"
+					sap:label="Draft Last Changed By"/><Property Name="DraftAccessType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Draft Access Type"/><Property Name="ProcessingStartDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft In Process Since"/><Property Name="InProcessByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="InProcessByUserDescription"
+					sap:label="Draft In Process By"/><Property Name="DraftIsKeptByUser" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Draft Is Kept By User"/><Property Name="EnqueueStartDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Locked Since"/><Property Name="DraftIsCreatedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Draft Created By Me"/><Property Name="DraftIsLastChangedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Draft Last Changed By Me"/><Property Name="DraftIsProcessedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Draft In Process By Me"/><Property Name="CreatedByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Draft Created By (Description)"/><Property Name="LastChangedByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Draft Last Changed By (Description)"/><Property Name="InProcessByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Draft In Process By (Description)"/></EntityType>
+			<EntityType Name="I_Supplier_VHType" sap:label="Supplier" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="Supplier"/></Key><Property Name="Supplier" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="SupplierName"
+					sap:label="Vendor" sap:quickinfo="Account Number of Vendor or Creditor"/><Property Name="SupplierName" Type="Edm.String" MaxLength="35" sap:label="Name" sap:quickinfo="Name 1"/><Property Name="AuthorizationGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Authorization"
+					sap:quickinfo="Authorization Group"/><Property Name="SupplierAccountGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Account group"
+					sap:quickinfo="Vendor account group"/><Property Name="IsBusinessPurposeCompleted" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Purpose Completed"
+					sap:quickinfo="Business Purpose Completed Flag"/></EntityType>
+			<EntityType Name="ZCO_AOH_CC_RMT_VHType" sap:label="Cost Center value help" sap:content-version="1">
+				<Key><PropertyRef Name="CostCenter"/><PropertyRef Name="ControllingArea"/></Key><Property Name="CostCenter" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Cost Center"/><Property Name="ControllingArea" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase"
+					sap:label="Controlling Area"/><Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Company Code"/><Property Name="ReceiverSystem" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Receiver System"
+					sap:quickinfo="Three-digit character field for IDocs"/><Property Name="StartDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid From"
+					sap:quickinfo="Valid-From Date"/><Property Name="EndDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid To" sap:quickinfo="Valid To Date"/></EntityType>
+			<EntityType Name="ZCO_AOH_CC_VHType" sap:label="Cost Center value help" sap:content-version="1">
+				<Key><PropertyRef Name="CostCenter"/><PropertyRef Name="ControllingArea"/></Key><Property Name="CostCenter" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Cost Center"/><Property Name="ControllingArea" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase"
+					sap:label="Controlling Area"/><Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Company Code"/><Property Name="StartDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid From"
+					sap:quickinfo="Valid-From Date"/><Property Name="EndDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid To" sap:quickinfo="Valid To Date"/></EntityType>
+			<EntityType Name="ZCO_AOH_C_SEB_HDRType" sap:label="SEB Header consumption view" sap:content-version="1">
+				<Key><PropertyRef Name="SebID"/><PropertyRef Name="DraftUUID"/><PropertyRef Name="IsActiveEntity"/></Key><Property Name="Activation_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Edit_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Preparation_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Validation_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SebID" Type="Edm.String" Nullable="false" MaxLength="32" sap:display-format="UpperCase" sap:label="Charact.string (32)"
+					sap:quickinfo="Character String - 32 User-Defined Characters" sap:creatable="false" sap:updatable="false"/><Property Name="ControllingArea" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase"
+					sap:text="to_ControllingAreaVH/ControllingAreaName" sap:label="Controlling Area" sap:value-list="standard"/><Property Name="SenderCompanyCode" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase"
+					sap:text="to_CompanyCodeVH/CompanyCodeName" sap:label="Sender-Company Code" sap:quickinfo="Sender - Company Code" sap:value-list="standard"/><Property Name="SebGroup" Type="Edm.String" MaxLength="8" sap:display-format="UpperCase" sap:text="to_SebGroupVH/SebGroupDescription"
+					sap:label="SEB-group" sap:quickinfo="SEB group" sap:value-list="standard"/><Property Name="SebGroupName" Type="Edm.String" MaxLength="40" sap:label="SEB group descr" sap:quickinfo="SEB group description"/><Property Name="Plant" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="to_PlantVH/PlantName" sap:label="Plant"
+					sap:value-list="standard"/><Property Name="LockIndicationGroup" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="lock ind. grp."
+					sap:quickinfo="Lock indicator group"/><Property Name="SebGroupStatus" Type="Edm.String" MaxLength="250" sap:display-format="UpperCase" sap:label="SEB Status"
+					sap:quickinfo="SEB Group Status" sap:creatable="false" sap:updatable="false"/><Property Name="SenderSystem" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Sender System"
+					sap:value-list="standard"/><Property Name="HasDraftEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Has Draft" sap:heading="" sap:quickinfo=""
+					sap:creatable="false" sap:updatable="false"/><Property Name="DraftUUID" Type="Edm.Guid" Nullable="false" sap:label="Key" sap:heading="" sap:quickinfo="" sap:creatable="false"
+					sap:updatable="false"/><Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Created On" sap:heading=""
+					sap:quickinfo="" sap:creatable="false" sap:updatable="false"/><Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Last Changed On" sap:heading=""
+					sap:quickinfo="" sap:creatable="false" sap:updatable="false"/><Property Name="HasActiveEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Has active" sap:heading="" sap:quickinfo=""
+					sap:creatable="false" sap:updatable="false"/><Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" sap:display-format="UpperCase" sap:label="Is active" sap:heading=""
+					sap:quickinfo="" sap:creatable="false" sap:updatable="false"/><NavigationProperty Name="DraftAdministrativeData" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_F272AE98F1F4CF6499417D2F184B1A58"
+					FromRole="FromRole_assoc_F272AE98F1F4CF6499417D2F184B1A58" ToRole="ToRole_assoc_F272AE98F1F4CF6499417D2F184B1A58"/><NavigationProperty Name="SiblingEntity" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_F8A3720583F1E7DA617072E70A58D004"
+					FromRole="FromRole_assoc_F8A3720583F1E7DA617072E70A58D004" ToRole="ToRole_assoc_F8A3720583F1E7DA617072E70A58D004"/><NavigationProperty Name="to_CompanyCodeVH" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_CEDED24ED4F3EE65EA7CAAEC6CE660FC"
+					FromRole="FromRole_assoc_CEDED24ED4F3EE65EA7CAAEC6CE660FC" ToRole="ToRole_assoc_CEDED24ED4F3EE65EA7CAAEC6CE660FC"/><NavigationProperty Name="to_ControllingAreaVH" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_D463D28C3E02BBBC616C6F3A33ACADF3"
+					FromRole="FromRole_assoc_D463D28C3E02BBBC616C6F3A33ACADF3" ToRole="ToRole_assoc_D463D28C3E02BBBC616C6F3A33ACADF3"/><NavigationProperty Name="to_items" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_C8993E6AEF0FD9BD0FB4F409078BD70C"
+					FromRole="FromRole_assoc_C8993E6AEF0FD9BD0FB4F409078BD70C" ToRole="ToRole_assoc_C8993E6AEF0FD9BD0FB4F409078BD70C"/><NavigationProperty Name="to_PlantVH" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_190422DDB97D00C209314ACA4A92FEAD"
+					FromRole="FromRole_assoc_190422DDB97D00C209314ACA4A92FEAD" ToRole="ToRole_assoc_190422DDB97D00C209314ACA4A92FEAD"/><NavigationProperty Name="to_SebGroupVH" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_9A24FA237446CA2B144680BE0C6A40DC"
+					FromRole="FromRole_assoc_9A24FA237446CA2B144680BE0C6A40DC" ToRole="ToRole_assoc_9A24FA237446CA2B144680BE0C6A40DC"/><NavigationProperty Name="to_SystemIDVH" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_4A6CDB4A9DF6F0228F9FBD24D38660A2"
+					FromRole="FromRole_assoc_4A6CDB4A9DF6F0228F9FBD24D38660A2" ToRole="ToRole_assoc_4A6CDB4A9DF6F0228F9FBD24D38660A2"/></EntityType>
+			<EntityType Name="ZCO_AOH_C_SEB_ITMType" sap:label="SEB Item consumption view" sap:content-version="1">
+				<Key><PropertyRef Name="SebID"/><PropertyRef Name="SebPosition"/><PropertyRef Name="DraftUUID"/><PropertyRef Name="IsActiveEntity"/></Key><Property Name="Preparation_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Validation_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ReceiverSystem_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SebID" Type="Edm.String" Nullable="false" MaxLength="32" sap:display-format="UpperCase" sap:label="Charact.string (32)"
+					sap:quickinfo="Character String - 32 User-Defined Characters" sap:creatable="false" sap:updatable="false"/><Property Name="SebPosition" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="Item number"
+					sap:creatable="false" sap:updatable="false"/><Property Name="OHActive" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="to_OHActiveVH/OHDesc"
+					sap:label="OH-activ." sap:value-list="standard"/><Property Name="SenderCostObjectType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Send. Cost.Obj. Type"
+					sap:quickinfo="AOH: Sender cost object type" sap:value-list="standard"/><Property Name="SenderCostObject" Type="Edm.String" MaxLength="24" sap:display-format="UpperCase" sap:label="Send. Cost Object"
+					sap:quickinfo="Sender Cost Object"/><Property Name="SenderProfitCenter" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Sender Profit center"
+					sap:creatable="false" sap:updatable="false"/><Property Name="SenderFunctionalArea" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Sendr FunctionalArea"
+					sap:quickinfo="Sender Functional Area" sap:creatable="false" sap:updatable="false"/><Property Name="SenderValuationApproach" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase"
+					sap:text="to_SendValAppVH/SVADescription" sap:label="Send.valuat.appro" sap:quickinfo="Sender valuation approach" sap:value-list="standard"/><Property Name="SendingAmount" Type="Edm.Decimal" Precision="16" Scale="3" sap:label="Sending amount"/><Property Name="Currency" Type="Edm.String" MaxLength="5" sap:text="to_CurrencyVH/Currency_Text" sap:label="Currency"
+					sap:quickinfo="Currency Key" sap:value-list="standard" sap:semantics="currency-code"/><Property Name="WBSCostDetermination" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Cost det.WBS"
+					sap:quickinfo="Costs determination for WBS hierarchy"/><Property Name="ReceiverCompanyCode" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase"
+					sap:text="to_CompanyCodeVH/CompanyCodeName" sap:label="Rec.CoCode" sap:quickinfo="Receiving company code" sap:value-list="standard"/><Property Name="ReceiverSystem" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:field-control="ReceiverSystem_fc"
+					sap:label="Receiver System" sap:value-list="standard"/><Property Name="ReceiverCostObjectType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Rec. Cost. Obj. Type"
+					sap:quickinfo="AOH: Receiver cost object type" sap:value-list="standard"/><Property Name="ReceiverCostObject" Type="Edm.String" MaxLength="24" sap:display-format="UpperCase" sap:label="Rec. Cost Object"
+					sap:quickinfo="Receiver Cost Object"/><Property Name="ReceiverProfitCenter" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Receiv Profit center"
+					sap:quickinfo="Receiver Profit center" sap:creatable="false" sap:updatable="false"/><Property Name="ReceiverFunctionalArea" Type="Edm.String" MaxLength="16" sap:display-format="UpperCase" sap:label="Recvr FunctionalArea"
+					sap:quickinfo="Receiver Functional Area" sap:creatable="false" sap:updatable="false"/><Property Name="DistributionRule" Type="Edm.Decimal" Precision="5" Scale="2" sap:label="Distribution Rule"/><Property Name="ReasonForChange" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Reason for change"/><Property Name="LockIndicationGroup" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Blocking indicator"
+					sap:quickinfo="Blocking indicator (flag)"/><Property Name="AllocationType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase"
+					sap:text="to_AllocTypeVH/AllocationTypeDescription" sap:label="Allocation type" sap:value-list="standard"/><Property Name="FromPeriod" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:text="to_PeriodFromVH/CalendarMonth_Text"
+					sap:label="From period" sap:value-list="standard"/><Property Name="FromYear" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="from year" sap:quickinfo="From year"
+					sap:value-list="standard"/><Property Name="ToPeriod" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:text="to_PeriodToVH/CalendarMonth_Text"
+					sap:label="To period" sap:value-list="standard"/><Property Name="ToYear" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="To year" sap:value-list="standard"/><Property Name="LastAllocRunPeriod" Type="Edm.String" MaxLength="3" sap:display-format="NonNegative" sap:label="Per.last alloc.run"
+					sap:quickinfo="Period of last allocation run"/><Property Name="LastAllocRUnYear" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Year of last allocat"
+					sap:quickinfo="Year of last allocation run"/><Property Name="ChangeDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Changed On"
+					sap:quickinfo="Date of Last Change"/><Property Name="ChangeName" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Changed by"
+					sap:quickinfo="Name of person who changed object"/><Property Name="AlternativeTaxClassification" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Alt.Tax Classific."
+					sap:quickinfo="Alternative Tax Classification"/><Property Name="ValuationFiscalYear" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Fiscal Year"/><Property Name="ObjectValidationStatus" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Validation Status"
+					sap:quickinfo="Object Validation Status"/><Property Name="ObjectValidationDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Current Date"
+					sap:quickinfo="System Date"/><Property Name="ObjectValidationTime" Type="Edm.Time" Precision="0" sap:label="Time" sap:quickinfo="System Time"/><Property Name="UserId" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="User Name"/><Property Name="MessageSend" Type="Edm.String" MaxLength="250"/><Property Name="MessageReceive" Type="Edm.String" MaxLength="250"/><Property Name="HasDraftEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Has Draft" sap:heading="" sap:quickinfo=""
+					sap:creatable="false" sap:updatable="false"/><Property Name="DraftUUID" Type="Edm.Guid" Nullable="false" sap:label="Key" sap:heading="" sap:quickinfo="" sap:creatable="false"
+					sap:updatable="false"/><Property Name="ParentDraftUUID" Type="Edm.Guid" sap:label="Key" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/><Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Created On" sap:heading=""
+					sap:quickinfo="" sap:creatable="false" sap:updatable="false"/><Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Draft Last Changed On" sap:heading=""
+					sap:quickinfo="" sap:creatable="false" sap:updatable="false"/><Property Name="HasActiveEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Has active" sap:heading="" sap:quickinfo=""
+					sap:creatable="false" sap:updatable="false"/><Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" sap:display-format="UpperCase" sap:label="Is active" sap:heading=""
+					sap:quickinfo="" sap:creatable="false" sap:updatable="false"/><NavigationProperty Name="to_header" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_C8993E6AEF0FD9BD0FB4F409078BD70C"
+					FromRole="ToRole_assoc_C8993E6AEF0FD9BD0FB4F409078BD70C" ToRole="FromRole_assoc_C8993E6AEF0FD9BD0FB4F409078BD70C"/><NavigationProperty Name="DraftAdministrativeData" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_368373BD973FC6DF04BC2CA89CB24D96"
+					FromRole="FromRole_assoc_368373BD973FC6DF04BC2CA89CB24D96" ToRole="ToRole_assoc_368373BD973FC6DF04BC2CA89CB24D96"/><NavigationProperty Name="SiblingEntity" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_246140C546B8AB996A0081FB800FA3B2"
+					FromRole="FromRole_assoc_246140C546B8AB996A0081FB800FA3B2" ToRole="ToRole_assoc_246140C546B8AB996A0081FB800FA3B2"/><NavigationProperty Name="to_AllocTypeVH" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_188210B4A60A731D0FE2D5AEAF1F28A6"
+					FromRole="FromRole_assoc_188210B4A60A731D0FE2D5AEAF1F28A6" ToRole="ToRole_assoc_188210B4A60A731D0FE2D5AEAF1F28A6"/><NavigationProperty Name="to_CalendarYearFromVH" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_DC2865FBBD3C276938C004A1D7FEE0CA"
+					FromRole="FromRole_assoc_DC2865FBBD3C276938C004A1D7FEE0CA" ToRole="ToRole_assoc_DC2865FBBD3C276938C004A1D7FEE0CA"/><NavigationProperty Name="to_CalendarYearToVH" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_23FFF010DA84322E1B1B64809AB10CC9"
+					FromRole="FromRole_assoc_23FFF010DA84322E1B1B64809AB10CC9" ToRole="ToRole_assoc_23FFF010DA84322E1B1B64809AB10CC9"/><NavigationProperty Name="to_CompanyCodeVH" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_FE6A7924B3230C06460851572B336588"
+					FromRole="FromRole_assoc_FE6A7924B3230C06460851572B336588" ToRole="ToRole_assoc_FE6A7924B3230C06460851572B336588"/><NavigationProperty Name="to_CurrencyVH" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_FB3A955E2CA0382D635F45E2DFFDC855"
+					FromRole="FromRole_assoc_FB3A955E2CA0382D635F45E2DFFDC855" ToRole="ToRole_assoc_FB3A955E2CA0382D635F45E2DFFDC855"/><NavigationProperty Name="to_ObjectTypeReceiverVH" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_28A089A140F4F071B9A87D810EAC7BE1"
+					FromRole="FromRole_assoc_28A089A140F4F071B9A87D810EAC7BE1" ToRole="ToRole_assoc_28A089A140F4F071B9A87D810EAC7BE1"/><NavigationProperty Name="to_ObjectTypeSenderVH" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_9CADC55AB6AD72E5C18F4ACDB249E580"
+					FromRole="FromRole_assoc_9CADC55AB6AD72E5C18F4ACDB249E580" ToRole="ToRole_assoc_9CADC55AB6AD72E5C18F4ACDB249E580"/><NavigationProperty Name="to_OHActiveVH" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_570009337DCD460FDBA99662CEE2FB5A"
+					FromRole="FromRole_assoc_570009337DCD460FDBA99662CEE2FB5A" ToRole="ToRole_assoc_570009337DCD460FDBA99662CEE2FB5A"/><NavigationProperty Name="to_PeriodFromVH" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_667043E9FD62456FA65C01389400EA65"
+					FromRole="FromRole_assoc_667043E9FD62456FA65C01389400EA65" ToRole="ToRole_assoc_667043E9FD62456FA65C01389400EA65"/><NavigationProperty Name="to_PeriodToVH" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_11092BA467917812434E900D8041D949"
+					FromRole="FromRole_assoc_11092BA467917812434E900D8041D949" ToRole="ToRole_assoc_11092BA467917812434E900D8041D949"/><NavigationProperty Name="to_SendValAppVH" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_F3E7115AA50E0700B32A45DB9D6F5990"
+					FromRole="FromRole_assoc_F3E7115AA50E0700B32A45DB9D6F5990" ToRole="ToRole_assoc_F3E7115AA50E0700B32A45DB9D6F5990"/><NavigationProperty Name="to_SystemIDVH" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_8A18BEF40062EFB050124D2D1DC78B24"
+					FromRole="FromRole_assoc_8A18BEF40062EFB050124D2D1DC78B24" ToRole="ToRole_assoc_8A18BEF40062EFB050124D2D1DC78B24"/></EntityType>
+			<EntityType Name="ZCO_AOH_IO_RMT_VHType" sap:label="Internal order value help" sap:content-version="1">
+				<Key><PropertyRef Name="InternalOrder"/></Key><Property Name="InternalOrder" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:text="Description"
+					sap:label="Order" sap:quickinfo="Order Number"/><Property Name="Description" Type="Edm.String" MaxLength="40" sap:label="Internal Order Desc." sap:quickinfo="Internal Order Description"/><Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Company Code"/><Property Name="ReceiverSystem" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Receiver System"
+					sap:quickinfo="Three-digit character field for IDocs"/><Property Name="OrderType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Order Type"/><Property Name="BusinessArea" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Business Area"/><Property Name="ControllingArea" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Controlling Area"/><Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Entered By"/><Property Name="CreatedOn" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created On"/></EntityType>
+			<EntityType Name="ZCO_AOH_IO_VHType" sap:label="Internal order value help" sap:content-version="1">
+				<Key><PropertyRef Name="InternalOrder"/></Key><Property Name="InternalOrder" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:text="Description"
+					sap:label="Order" sap:quickinfo="Order Number"/><Property Name="Description" Type="Edm.String" MaxLength="40" sap:label="Internal Order Desc." sap:quickinfo="Internal Order Description"/><Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Company Code"/><Property Name="OrderCategory" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:label="Order category"/><Property Name="BusinessArea" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Business Area"/><Property Name="ControllingArea" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Controlling Area"/><Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Entered By"/><Property Name="CreatedOn" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created On"/></EntityType>
+			<EntityType Name="ZCO_AOH_NA_RMT_VHType" sap:label="Network activity value help" sap:content-version="1">
+				<Key><PropertyRef Name="NetworkActivity"/></Key><Property Name="NetworkActivity" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:text="Description"
+					sap:label="Network" sap:quickinfo="Order Number"/><Property Name="Description" Type="Edm.String" MaxLength="40" sap:label="Activity/Element Name" sap:quickinfo="Operation short text"/><Property Name="ReceiverSystem" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Receiver System"
+					sap:quickinfo="Three-digit character field for IDocs"/><Property Name="WBSElement" Type="Edm.String" MaxLength="24" sap:display-format="UpperCase" sap:label="WBS element"
+					sap:quickinfo="Work Breakdown Structure Element (WBS Element)"/><Property Name="Project" Type="Edm.String" MaxLength="24" sap:display-format="UpperCase" sap:label="Project definition"/><Property Name="ControllingArea" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Controlling Area"/><Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Company Code"/></EntityType>
+			<EntityType Name="ZCO_AOH_NA_VHType" sap:label="Network activity value help" sap:content-version="1">
+				<Key><PropertyRef Name="NetworkActivity"/></Key><Property Name="NetworkActivity" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="Description"
+					sap:label="Activity" sap:quickinfo="Activity Number"/><Property Name="Description" Type="Edm.String" MaxLength="40" sap:label="Activity/Element Name" sap:quickinfo="Operation short text"/><Property Name="WBSElement" Type="Edm.String" MaxLength="24" sap:display-format="UpperCase" sap:label="WBS element"
+					sap:quickinfo="Work Breakdown Structure Element (WBS Element)"/><Property Name="Project" Type="Edm.String" MaxLength="24" sap:display-format="UpperCase" sap:label="Project definition"/><Property Name="ControllingArea" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Controlling Area"/><Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Company Code"/></EntityType>
+			<EntityType Name="ZCO_AOH_WBS_RMT_VHType" sap:label="WBS Value help" sap:content-version="1">
+				<Key><PropertyRef Name="WBSElement"/></Key><Property Name="WBSElement" Type="Edm.String" Nullable="false" MaxLength="24" sap:display-format="UpperCase" sap:text="Description"
+					sap:label="WBS element" sap:quickinfo="Work Breakdown Structure Element (WBS Element)"/><Property Name="Description" Type="Edm.String" MaxLength="40" sap:label="WBS Element Name"/><Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Company Code"/><Property Name="ReceiverSystem" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Receiver System"
+					sap:quickinfo="Three-digit character field for IDocs"/><Property Name="Project" Type="Edm.String" MaxLength="24" sap:display-format="UpperCase" sap:label="Project definition"/><Property Name="ControllingArea" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Controlling Area"/><Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created by"
+					sap:quickinfo="Name of Person who Created the Object"/><Property Name="CreatedOn" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created on"
+					sap:quickinfo="Date on which the record was created"/></EntityType>
+			<EntityType Name="ZCO_AOH_WBS_VHType" sap:label="WBS Value help" sap:content-version="1">
+				<Key><PropertyRef Name="WBSElement"/></Key><Property Name="WBSElement" Type="Edm.String" Nullable="false" MaxLength="24" sap:display-format="UpperCase" sap:text="Description"
+					sap:label="WBS element" sap:quickinfo="Work Breakdown Structure Element (WBS Element)"/><Property Name="Description" Type="Edm.String" MaxLength="40" sap:label="WBS Element Name"/><Property Name="CompanyCode" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Company Code"/><Property Name="Project" Type="Edm.String" MaxLength="24" sap:display-format="UpperCase" sap:label="Project definition"/><Property Name="ControllingArea" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Controlling Area"/><Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created by"
+					sap:quickinfo="Name of Person who Created the Object"/><Property Name="CreatedOn" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created on"
+					sap:quickinfo="Date on which the record was created"/></EntityType>
+			<EntityType Name="ZCO_PAPM_F4_BUKRSType" sap:label="View for company code F4 help" sap:content-version="1">
+				<Key><PropertyRef Name="CompanyCode"/></Key><Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="CompanyCodeName"
+					sap:label="Company Code"/><Property Name="CompanyCodeName" Type="Edm.String" MaxLength="25" sap:label="Company Name" sap:quickinfo="Name of Company Code or Company"/><Property Name="City" Type="Edm.String" MaxLength="25" sap:label="City"/><Property Name="Country" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Country Key"/><Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Currency" sap:quickinfo="Currency Key" sap:semantics="currency-code"/><Property Name="Language" Type="Edm.String" MaxLength="2" sap:label="Language Key"/><Property Name="ChartOfAccounts" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Chart of Accounts"/></EntityType>
+			<EntityType Name="ZCO_PAPM_F4_COST_OBJ_TYPEType" sap:label="Cost object types F4" sap:content-version="1">
+				<Key><PropertyRef Name="COST_OBJ_TYPE_S"/></Key><Property Name="COST_OBJ_TYPE_S" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase"
+					sap:label="Send. Cost.Obj. Type" sap:quickinfo="AOH: Sender cost object type"/><Property Name="objDesc" Type="Edm.String" MaxLength="60" sap:label="Short Descript." sap:quickinfo="Short Text for Fixed Values"/></EntityType>
+			<EntityType Name="ZCO_PAPM_F4_COST_OBJ_TYPE_RType" sap:label="F4 help for Receiver Object type" sap:content-version="1">
+				<Key><PropertyRef Name="COST_OBJ_TYPE_R"/></Key><Property Name="COST_OBJ_TYPE_R" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase"
+					sap:label="Rec. Cost. Obj. Type" sap:quickinfo="AOH: Receiver cost object type"/><Property Name="objDesc" Type="Edm.String" MaxLength="60" sap:label="Short Descript." sap:quickinfo="Short Text for Fixed Values"/></EntityType>
+			<EntityType Name="ZCO_PAPM_F4_KOKRSType" sap:label="View for F4 help" sap:content-version="1">
+				<Key><PropertyRef Name="ControllingArea"/></Key><Property Name="ControllingArea" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase"
+					sap:text="ControllingAreaName" sap:label="Controlling Area"/><Property Name="FiscalYearVariant" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Fiscal Year Variant"/><Property Name="ControllingAreaName" Type="Edm.String" MaxLength="25" sap:label="Controlling Area Name"/><Property Name="ChartOfAccounts" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Chart of Accounts"/><Property Name="AllocationIndicator" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="CoCd -&gt; CO Area"
+					sap:quickinfo="Allocation Indicator"/></EntityType>
+			<EntityType Name="ZCO_PAPM_F4_OHType" sap:label="View for OH active F4" sap:content-version="1">
+				<Key><PropertyRef Name="OHActive"/></Key><Property Name="OHActive" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="OHDesc"
+					sap:label="OH-activ."/><Property Name="OHDesc" Type="Edm.String" MaxLength="60" sap:label="Short Descript." sap:quickinfo="Short Text for Fixed Values"/></EntityType>
+			<EntityType Name="ZCO_PAPM_F4_REC_BUKRSType" sap:label="Receiver company code determination" sap:content-version="1">
+				<Key><PropertyRef Name="CompanyCode"/></Key><Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="CompanyCodeName"
+					sap:label="Company Code"/><Property Name="CompanyCodeName" Type="Edm.String" MaxLength="25" sap:label="Company Name" sap:quickinfo="Name of Company Code or Company"/><Property Name="City" Type="Edm.String" MaxLength="25" sap:label="City"/><Property Name="Country" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Country Key"/><Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Currency" sap:quickinfo="Currency Key" sap:semantics="currency-code"/><Property Name="Language" Type="Edm.String" MaxLength="2" sap:label="Language Key"/><Property Name="ChartOfAccounts" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Chart of Accounts"/><Property Name="SystemId" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="System" sap:quickinfo="3-Byte field"/></EntityType>
+			<EntityType Name="ZCO_PAPM_F4_SEB_GRUPPEType" sap:label="View for SEB Group F4 help" sap:content-version="1">
+				<Key><PropertyRef Name="SebID"/><PropertyRef Name="SebGroup"/></Key><Property Name="SebID" Type="Edm.String" Nullable="false" MaxLength="32" sap:display-format="UpperCase" sap:label="Charact.string (32)"
+					sap:quickinfo="Character String - 32 User-Defined Characters"/><Property Name="SebGroup" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="UpperCase" sap:text="SebGroupDescription"
+					sap:label="SEB-group" sap:quickinfo="SEB group"/><Property Name="ControllingArea" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Controlling Area"/><Property Name="SenderCompanyCode" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Sender-Company Code"
+					sap:quickinfo="Sender - Company Code"/><Property Name="SebGroupDescription" Type="Edm.String" MaxLength="40" sap:label="SEB group descr" sap:quickinfo="SEB group description"/><Property Name="Plant" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Plant"/></EntityType>
+			<EntityType Name="ZCO_PAPM_F4_SRSYSIDType" sap:label="View for Sender / Receiver System" sap:content-version="1">
+				<Key><PropertyRef Name="CompanyCode"/><PropertyRef Name="SystemId"/></Key><Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Company Code"/><Property Name="SystemId" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="UpperCase" sap:label="System"
+					sap:quickinfo="3-Byte field"/></EntityType>
+			<EntityType Name="ZCO_PAPM_F4_SWERTType" sap:label="View for Sender valuation approach" sap:content-version="1">
+				<Key><PropertyRef Name="SenderValuationApproach"/></Key><Property Name="SenderValuationApproach" Type="Edm.String" Nullable="false" MaxLength="1" sap:display-format="UpperCase"
+					sap:text="SVADescription" sap:label="Send.valuat.appro" sap:quickinfo="Sender valuation approach"/><Property Name="SVADescription" Type="Edm.String" MaxLength="60" sap:label="Short Descript." sap:quickinfo="Short Text for Fixed Values"/></EntityType>
+			<EntityType Name="ZCO_PAPM_F4_VRTYPType" sap:label="View for OH active F4" sap:content-version="1">
+				<Key><PropertyRef Name="AllocationType"/></Key><Property Name="AllocationType" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase"
+					sap:text="AllocationTypeDescription" sap:label="Allocation type"/><Property Name="AllocationTypeDescription" Type="Edm.String" MaxLength="60" sap:label="Short Descript."
+					sap:quickinfo="Short Text for Fixed Values"/></EntityType>
+			<EntityType Name="ZCO_PAPM_F4_WAERSType" sap:label="View for WAERS F4" sap:content-version="1">
+				<Key><PropertyRef Name="Currency"/></Key><Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" sap:text="Currency_Text" sap:label="Currency"
+					sap:quickinfo="Currency Key" sap:semantics="currency-code"/><Property Name="Currency_Text" Type="Edm.String" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false"/><Property Name="CurrencyISOCode" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="ISO Code"
+					sap:quickinfo="ISO Currency Code"/><Property Name="AlternativeCurrencyKey" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Alternative Key"/><NavigationProperty Name="to_Text" Relationship="ZCO_AOH_C_SEB_HDR_SRV.assoc_CD3AE7531C126384BE611CD1F7DAACC4"
+					FromRole="FromRole_assoc_CD3AE7531C126384BE611CD1F7DAACC4" ToRole="ToRole_assoc_CD3AE7531C126384BE611CD1F7DAACC4"/></EntityType>
+			<EntityType Name="ZCO_PAPM_F4_WERKSType" sap:label="View for plant F4" sap:content-version="1">
+				<Key><PropertyRef Name="Plant"/></Key><Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="PlantName"
+					sap:label="Plant"/><Property Name="PlantName" Type="Edm.String" MaxLength="30" sap:label="Plant Name"/><Property Name="ValuationArea" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Valuation area"/><Property Name="PlantCustomer" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Customer No Plant"
+					sap:quickinfo="Customer Number of Plant" sap:value-list="standard"/><Property Name="PlantSupplier" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Sppl. No. Plnt"
+					sap:quickinfo="Supplier Number of Plant" sap:value-list="standard"/><Property Name="FactoryCalendar" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Factory Calendar"
+					sap:quickinfo="Factory calendar key"/></EntityType>
+			<ComplexType Name="ValidationFunctionResult"><Property Name="IsValid" Type="Edm.Boolean" sap:label="Is valid"/></ComplexType>
+			<Association Name="assoc_368373BD973FC6DF04BC2CA89CB24D96" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" Multiplicity="1" Role="FromRole_assoc_368373BD973FC6DF04BC2CA89CB24D96"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.I_DraftAdministrativeDataType" Multiplicity="0..1" Role="ToRole_assoc_368373BD973FC6DF04BC2CA89CB24D96"/></Association>
+			<Association Name="assoc_246140C546B8AB996A0081FB800FA3B2" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" Multiplicity="1" Role="FromRole_assoc_246140C546B8AB996A0081FB800FA3B2"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" Multiplicity="0..1" Role="ToRole_assoc_246140C546B8AB996A0081FB800FA3B2"/></Association>
+			<Association Name="assoc_188210B4A60A731D0FE2D5AEAF1F28A6" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" Multiplicity="1" Role="FromRole_assoc_188210B4A60A731D0FE2D5AEAF1F28A6"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_VRTYPType" Multiplicity="0..1" Role="ToRole_assoc_188210B4A60A731D0FE2D5AEAF1F28A6"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_188210B4A60A731D0FE2D5AEAF1F28A6"><PropertyRef Name="AllocationType"/></Principal>
+					<Dependent Role="FromRole_assoc_188210B4A60A731D0FE2D5AEAF1F28A6"><PropertyRef Name="AllocationType"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_DC2865FBBD3C276938C004A1D7FEE0CA" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" Multiplicity="1" Role="FromRole_assoc_DC2865FBBD3C276938C004A1D7FEE0CA"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.I_CalendarYearType" Multiplicity="0..1" Role="ToRole_assoc_DC2865FBBD3C276938C004A1D7FEE0CA"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_DC2865FBBD3C276938C004A1D7FEE0CA"><PropertyRef Name="CalendarYear"/></Principal>
+					<Dependent Role="FromRole_assoc_DC2865FBBD3C276938C004A1D7FEE0CA"><PropertyRef Name="FromYear"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_23FFF010DA84322E1B1B64809AB10CC9" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" Multiplicity="1" Role="FromRole_assoc_23FFF010DA84322E1B1B64809AB10CC9"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.I_CalendarYearType" Multiplicity="0..1" Role="ToRole_assoc_23FFF010DA84322E1B1B64809AB10CC9"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_23FFF010DA84322E1B1B64809AB10CC9"><PropertyRef Name="CalendarYear"/></Principal>
+					<Dependent Role="FromRole_assoc_23FFF010DA84322E1B1B64809AB10CC9"><PropertyRef Name="ToYear"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_FE6A7924B3230C06460851572B336588" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" Multiplicity="1" Role="FromRole_assoc_FE6A7924B3230C06460851572B336588"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_REC_BUKRSType" Multiplicity="0..1" Role="ToRole_assoc_FE6A7924B3230C06460851572B336588"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_FE6A7924B3230C06460851572B336588"><PropertyRef Name="CompanyCode"/></Principal>
+					<Dependent Role="FromRole_assoc_FE6A7924B3230C06460851572B336588"><PropertyRef Name="ReceiverCompanyCode"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_FB3A955E2CA0382D635F45E2DFFDC855" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" Multiplicity="1" Role="FromRole_assoc_FB3A955E2CA0382D635F45E2DFFDC855"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_WAERSType" Multiplicity="0..1" Role="ToRole_assoc_FB3A955E2CA0382D635F45E2DFFDC855"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_FB3A955E2CA0382D635F45E2DFFDC855"><PropertyRef Name="Currency"/></Principal>
+					<Dependent Role="FromRole_assoc_FB3A955E2CA0382D635F45E2DFFDC855"><PropertyRef Name="Currency"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_28A089A140F4F071B9A87D810EAC7BE1" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" Multiplicity="1" Role="FromRole_assoc_28A089A140F4F071B9A87D810EAC7BE1"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_COST_OBJ_TYPE_RType" Multiplicity="0..1" Role="ToRole_assoc_28A089A140F4F071B9A87D810EAC7BE1"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_28A089A140F4F071B9A87D810EAC7BE1"><PropertyRef Name="COST_OBJ_TYPE_R"/></Principal>
+					<Dependent Role="FromRole_assoc_28A089A140F4F071B9A87D810EAC7BE1"><PropertyRef Name="ReceiverCostObjectType"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_9CADC55AB6AD72E5C18F4ACDB249E580" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" Multiplicity="1" Role="FromRole_assoc_9CADC55AB6AD72E5C18F4ACDB249E580"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_COST_OBJ_TYPEType" Multiplicity="0..1" Role="ToRole_assoc_9CADC55AB6AD72E5C18F4ACDB249E580"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_9CADC55AB6AD72E5C18F4ACDB249E580"><PropertyRef Name="COST_OBJ_TYPE_S"/></Principal>
+					<Dependent Role="FromRole_assoc_9CADC55AB6AD72E5C18F4ACDB249E580"><PropertyRef Name="SenderCostObjectType"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_570009337DCD460FDBA99662CEE2FB5A" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" Multiplicity="1" Role="FromRole_assoc_570009337DCD460FDBA99662CEE2FB5A"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_OHType" Multiplicity="0..1" Role="ToRole_assoc_570009337DCD460FDBA99662CEE2FB5A"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_570009337DCD460FDBA99662CEE2FB5A"><PropertyRef Name="OHActive"/></Principal>
+					<Dependent Role="FromRole_assoc_570009337DCD460FDBA99662CEE2FB5A"><PropertyRef Name="OHActive"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_667043E9FD62456FA65C01389400EA65" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" Multiplicity="1" Role="FromRole_assoc_667043E9FD62456FA65C01389400EA65"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.I_CalendarMonthType" Multiplicity="0..1" Role="ToRole_assoc_667043E9FD62456FA65C01389400EA65"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_667043E9FD62456FA65C01389400EA65"><PropertyRef Name="CalendarMonth"/></Principal>
+					<Dependent Role="FromRole_assoc_667043E9FD62456FA65C01389400EA65"><PropertyRef Name="FromPeriod"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_11092BA467917812434E900D8041D949" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" Multiplicity="1" Role="FromRole_assoc_11092BA467917812434E900D8041D949"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.I_CalendarMonthType" Multiplicity="0..1" Role="ToRole_assoc_11092BA467917812434E900D8041D949"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_11092BA467917812434E900D8041D949"><PropertyRef Name="CalendarMonth"/></Principal>
+					<Dependent Role="FromRole_assoc_11092BA467917812434E900D8041D949"><PropertyRef Name="ToPeriod"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_F3E7115AA50E0700B32A45DB9D6F5990" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" Multiplicity="1" Role="FromRole_assoc_F3E7115AA50E0700B32A45DB9D6F5990"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_SWERTType" Multiplicity="0..1" Role="ToRole_assoc_F3E7115AA50E0700B32A45DB9D6F5990"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_F3E7115AA50E0700B32A45DB9D6F5990"><PropertyRef Name="SenderValuationApproach"/></Principal>
+					<Dependent Role="FromRole_assoc_F3E7115AA50E0700B32A45DB9D6F5990"><PropertyRef Name="SenderValuationApproach"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_8A18BEF40062EFB050124D2D1DC78B24" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" Multiplicity="1" Role="FromRole_assoc_8A18BEF40062EFB050124D2D1DC78B24"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_SRSYSIDType" Multiplicity="0..1" Role="ToRole_assoc_8A18BEF40062EFB050124D2D1DC78B24"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_8A18BEF40062EFB050124D2D1DC78B24"><PropertyRef Name="CompanyCode"/><PropertyRef Name="SystemId"/></Principal>
+					<Dependent Role="FromRole_assoc_8A18BEF40062EFB050124D2D1DC78B24"><PropertyRef Name="ReceiverCompanyCode"/><PropertyRef Name="ReceiverSystem"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_CD3AE7531C126384BE611CD1F7DAACC4" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_WAERSType" Multiplicity="1" Role="FromRole_assoc_CD3AE7531C126384BE611CD1F7DAACC4"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.I_CurrencyTextType" Multiplicity="*" Role="ToRole_assoc_CD3AE7531C126384BE611CD1F7DAACC4"/></Association>
+			<Association Name="assoc_F272AE98F1F4CF6499417D2F184B1A58" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType" Multiplicity="1" Role="FromRole_assoc_F272AE98F1F4CF6499417D2F184B1A58"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.I_DraftAdministrativeDataType" Multiplicity="0..1" Role="ToRole_assoc_F272AE98F1F4CF6499417D2F184B1A58"/></Association>
+			<Association Name="assoc_F8A3720583F1E7DA617072E70A58D004" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType" Multiplicity="1" Role="FromRole_assoc_F8A3720583F1E7DA617072E70A58D004"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType" Multiplicity="0..1" Role="ToRole_assoc_F8A3720583F1E7DA617072E70A58D004"/></Association>
+			<Association Name="assoc_CEDED24ED4F3EE65EA7CAAEC6CE660FC" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType" Multiplicity="1" Role="FromRole_assoc_CEDED24ED4F3EE65EA7CAAEC6CE660FC"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_BUKRSType" Multiplicity="0..1" Role="ToRole_assoc_CEDED24ED4F3EE65EA7CAAEC6CE660FC"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_CEDED24ED4F3EE65EA7CAAEC6CE660FC"><PropertyRef Name="CompanyCode"/></Principal>
+					<Dependent Role="FromRole_assoc_CEDED24ED4F3EE65EA7CAAEC6CE660FC"><PropertyRef Name="SenderCompanyCode"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_D463D28C3E02BBBC616C6F3A33ACADF3" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType" Multiplicity="1" Role="FromRole_assoc_D463D28C3E02BBBC616C6F3A33ACADF3"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_KOKRSType" Multiplicity="0..1" Role="ToRole_assoc_D463D28C3E02BBBC616C6F3A33ACADF3"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_D463D28C3E02BBBC616C6F3A33ACADF3"><PropertyRef Name="ControllingArea"/></Principal>
+					<Dependent Role="FromRole_assoc_D463D28C3E02BBBC616C6F3A33ACADF3"><PropertyRef Name="ControllingArea"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_C8993E6AEF0FD9BD0FB4F409078BD70C" sap:content-version="1">
+				<End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType" Multiplicity="1" Role="FromRole_assoc_C8993E6AEF0FD9BD0FB4F409078BD70C"><OnDelete Action="Cascade"/></End><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" Multiplicity="*" Role="ToRole_assoc_C8993E6AEF0FD9BD0FB4F409078BD70C"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_assoc_C8993E6AEF0FD9BD0FB4F409078BD70C"><PropertyRef Name="SebID"/></Principal>
+					<Dependent Role="ToRole_assoc_C8993E6AEF0FD9BD0FB4F409078BD70C"><PropertyRef Name="SebID"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_190422DDB97D00C209314ACA4A92FEAD" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType" Multiplicity="1" Role="FromRole_assoc_190422DDB97D00C209314ACA4A92FEAD"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_WERKSType" Multiplicity="0..1" Role="ToRole_assoc_190422DDB97D00C209314ACA4A92FEAD"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_190422DDB97D00C209314ACA4A92FEAD"><PropertyRef Name="Plant"/></Principal>
+					<Dependent Role="FromRole_assoc_190422DDB97D00C209314ACA4A92FEAD"><PropertyRef Name="Plant"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_9A24FA237446CA2B144680BE0C6A40DC" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType" Multiplicity="1" Role="FromRole_assoc_9A24FA237446CA2B144680BE0C6A40DC"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_SEB_GRUPPEType" Multiplicity="0..1" Role="ToRole_assoc_9A24FA237446CA2B144680BE0C6A40DC"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_9A24FA237446CA2B144680BE0C6A40DC"><PropertyRef Name="SebGroup"/><PropertyRef Name="SebID"/></Principal>
+					<Dependent Role="FromRole_assoc_9A24FA237446CA2B144680BE0C6A40DC"><PropertyRef Name="SebGroup"/><PropertyRef Name="SebID"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_4A6CDB4A9DF6F0228F9FBD24D38660A2" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType" Multiplicity="1" Role="FromRole_assoc_4A6CDB4A9DF6F0228F9FBD24D38660A2"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_SRSYSIDType" Multiplicity="0..1" Role="ToRole_assoc_4A6CDB4A9DF6F0228F9FBD24D38660A2"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_4A6CDB4A9DF6F0228F9FBD24D38660A2"><PropertyRef Name="CompanyCode"/><PropertyRef Name="SystemId"/></Principal>
+					<Dependent Role="FromRole_assoc_4A6CDB4A9DF6F0228F9FBD24D38660A2"><PropertyRef Name="SenderCompanyCode"/><PropertyRef Name="SenderSystem"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_115EABD946727067A42853342D65AC71" sap:content-version="1"><End Type="ZCO_AOH_C_SEB_HDR_SRV.I_CalendarMonthType" Multiplicity="1" Role="FromRole_assoc_115EABD946727067A42853342D65AC71"/><End Type="ZCO_AOH_C_SEB_HDR_SRV.I_CalendarMonthTextType" Multiplicity="*" Role="ToRole_assoc_115EABD946727067A42853342D65AC71"/></Association>
+			<EntityContainer Name="ZCO_AOH_C_SEB_HDR_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true"
+				sap:supported-formats="atom json xlsx"><EntitySet Name="I_CalendarMonth" EntityType="ZCO_AOH_C_SEB_HDR_SRV.I_CalendarMonthType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_CalendarMonthText" EntityType="ZCO_AOH_C_SEB_HDR_SRV.I_CalendarMonthTextType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="I_CalendarYear" EntityType="ZCO_AOH_C_SEB_HDR_SRV.I_CalendarYearType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_CurrencyText" EntityType="ZCO_AOH_C_SEB_HDR_SRV.I_CurrencyTextType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_Customer_VH" EntityType="ZCO_AOH_C_SEB_HDR_SRV.I_Customer_VHType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_DraftAdministrativeData" EntityType="ZCO_AOH_C_SEB_HDR_SRV.I_DraftAdministrativeDataType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:addressable="false" sap:content-version="1"/><EntitySet Name="I_Supplier_VH" EntityType="ZCO_AOH_C_SEB_HDR_SRV.I_Supplier_VHType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="ZCO_AOH_CC_RMT_VH" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_CC_RMT_VHType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCO_AOH_CC_VH" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_CC_VHType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCO_AOH_C_SEB_HDR" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType" sap:content-version="1"/><EntitySet Name="ZCO_AOH_C_SEB_ITM" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" sap:content-version="1"/><EntitySet Name="ZCO_AOH_IO_RMT_VH" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_IO_RMT_VHType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCO_AOH_IO_VH" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_IO_VHType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCO_AOH_NA_RMT_VH" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_NA_RMT_VHType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCO_AOH_NA_VH" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_NA_VHType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCO_AOH_WBS_RMT_VH" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_WBS_RMT_VHType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCO_AOH_WBS_VH" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_WBS_VHType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCO_PAPM_F4_BUKRS" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_BUKRSType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCO_PAPM_F4_COST_OBJ_TYPE" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_COST_OBJ_TYPEType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCO_PAPM_F4_COST_OBJ_TYPE_R" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_COST_OBJ_TYPE_RType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCO_PAPM_F4_KOKRS" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_KOKRSType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCO_PAPM_F4_OH" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_OHType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCO_PAPM_F4_REC_BUKRS" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_REC_BUKRSType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCO_PAPM_F4_SEB_GRUPPE" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_SEB_GRUPPEType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCO_PAPM_F4_SRSYSID" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_SRSYSIDType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCO_PAPM_F4_SWERT" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_SWERTType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCO_PAPM_F4_VRTYP" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_VRTYPType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCO_PAPM_F4_WAERS" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_WAERSType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCO_PAPM_F4_WERKS" EntityType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_WERKSType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/>
+				<AssociationSet Name="assoc_4A6CDB4A9DF6F0228F9FBD24D38660A2" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_4A6CDB4A9DF6F0228F9FBD24D38660A2"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_HDR" Role="FromRole_assoc_4A6CDB4A9DF6F0228F9FBD24D38660A2"/><End EntitySet="ZCO_PAPM_F4_SRSYSID" Role="ToRole_assoc_4A6CDB4A9DF6F0228F9FBD24D38660A2"/></AssociationSet>
+				<AssociationSet Name="assoc_CD3AE7531C126384BE611CD1F7DAACC4" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_CD3AE7531C126384BE611CD1F7DAACC4"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_PAPM_F4_WAERS" Role="FromRole_assoc_CD3AE7531C126384BE611CD1F7DAACC4"/><End EntitySet="I_CurrencyText" Role="ToRole_assoc_CD3AE7531C126384BE611CD1F7DAACC4"/></AssociationSet>
+				<AssociationSet Name="assoc_368373BD973FC6DF04BC2CA89CB24D96" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_368373BD973FC6DF04BC2CA89CB24D96"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_ITM" Role="FromRole_assoc_368373BD973FC6DF04BC2CA89CB24D96"/><End EntitySet="I_DraftAdministrativeData" Role="ToRole_assoc_368373BD973FC6DF04BC2CA89CB24D96"/></AssociationSet>
+				<AssociationSet Name="assoc_570009337DCD460FDBA99662CEE2FB5A" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_570009337DCD460FDBA99662CEE2FB5A"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_ITM" Role="FromRole_assoc_570009337DCD460FDBA99662CEE2FB5A"/><End EntitySet="ZCO_PAPM_F4_OH" Role="ToRole_assoc_570009337DCD460FDBA99662CEE2FB5A"/></AssociationSet>
+				<AssociationSet Name="assoc_667043E9FD62456FA65C01389400EA65" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_667043E9FD62456FA65C01389400EA65"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_ITM" Role="FromRole_assoc_667043E9FD62456FA65C01389400EA65"/><End EntitySet="I_CalendarMonth" Role="ToRole_assoc_667043E9FD62456FA65C01389400EA65"/></AssociationSet>
+				<AssociationSet Name="assoc_FE6A7924B3230C06460851572B336588" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_FE6A7924B3230C06460851572B336588"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_ITM" Role="FromRole_assoc_FE6A7924B3230C06460851572B336588"/><End EntitySet="ZCO_PAPM_F4_REC_BUKRS" Role="ToRole_assoc_FE6A7924B3230C06460851572B336588"/></AssociationSet>
+				<AssociationSet Name="assoc_F8A3720583F1E7DA617072E70A58D004" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_F8A3720583F1E7DA617072E70A58D004"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_HDR" Role="FromRole_assoc_F8A3720583F1E7DA617072E70A58D004"/><End EntitySet="ZCO_AOH_C_SEB_HDR" Role="ToRole_assoc_F8A3720583F1E7DA617072E70A58D004"/></AssociationSet>
+				<AssociationSet Name="assoc_CEDED24ED4F3EE65EA7CAAEC6CE660FC" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_CEDED24ED4F3EE65EA7CAAEC6CE660FC"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_HDR" Role="FromRole_assoc_CEDED24ED4F3EE65EA7CAAEC6CE660FC"/><End EntitySet="ZCO_PAPM_F4_BUKRS" Role="ToRole_assoc_CEDED24ED4F3EE65EA7CAAEC6CE660FC"/></AssociationSet>
+				<AssociationSet Name="assoc_23FFF010DA84322E1B1B64809AB10CC9" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_23FFF010DA84322E1B1B64809AB10CC9"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_ITM" Role="FromRole_assoc_23FFF010DA84322E1B1B64809AB10CC9"/><End EntitySet="I_CalendarYear" Role="ToRole_assoc_23FFF010DA84322E1B1B64809AB10CC9"/></AssociationSet>
+				<AssociationSet Name="assoc_F272AE98F1F4CF6499417D2F184B1A58" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_F272AE98F1F4CF6499417D2F184B1A58"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_HDR" Role="FromRole_assoc_F272AE98F1F4CF6499417D2F184B1A58"/><End EntitySet="I_DraftAdministrativeData" Role="ToRole_assoc_F272AE98F1F4CF6499417D2F184B1A58"/></AssociationSet>
+				<AssociationSet Name="assoc_188210B4A60A731D0FE2D5AEAF1F28A6" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_188210B4A60A731D0FE2D5AEAF1F28A6"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_ITM" Role="FromRole_assoc_188210B4A60A731D0FE2D5AEAF1F28A6"/><End EntitySet="ZCO_PAPM_F4_VRTYP" Role="ToRole_assoc_188210B4A60A731D0FE2D5AEAF1F28A6"/></AssociationSet>
+				<AssociationSet Name="assoc_28A089A140F4F071B9A87D810EAC7BE1" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_28A089A140F4F071B9A87D810EAC7BE1"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_ITM" Role="FromRole_assoc_28A089A140F4F071B9A87D810EAC7BE1"/><End EntitySet="ZCO_PAPM_F4_COST_OBJ_TYPE_R" Role="ToRole_assoc_28A089A140F4F071B9A87D810EAC7BE1"/></AssociationSet>
+				<AssociationSet Name="assoc_115EABD946727067A42853342D65AC71" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_115EABD946727067A42853342D65AC71"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="I_CalendarMonth" Role="FromRole_assoc_115EABD946727067A42853342D65AC71"/><End EntitySet="I_CalendarMonthText" Role="ToRole_assoc_115EABD946727067A42853342D65AC71"/></AssociationSet>
+				<AssociationSet Name="assoc_DC2865FBBD3C276938C004A1D7FEE0CA" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_DC2865FBBD3C276938C004A1D7FEE0CA"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_ITM" Role="FromRole_assoc_DC2865FBBD3C276938C004A1D7FEE0CA"/><End EntitySet="I_CalendarYear" Role="ToRole_assoc_DC2865FBBD3C276938C004A1D7FEE0CA"/></AssociationSet>
+				<AssociationSet Name="assoc_C8993E6AEF0FD9BD0FB4F409078BD70C" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_C8993E6AEF0FD9BD0FB4F409078BD70C"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_HDR" Role="FromRole_assoc_C8993E6AEF0FD9BD0FB4F409078BD70C"/><End EntitySet="ZCO_AOH_C_SEB_ITM" Role="ToRole_assoc_C8993E6AEF0FD9BD0FB4F409078BD70C"/></AssociationSet>
+				<AssociationSet Name="assoc_F3E7115AA50E0700B32A45DB9D6F5990" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_F3E7115AA50E0700B32A45DB9D6F5990"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_ITM" Role="FromRole_assoc_F3E7115AA50E0700B32A45DB9D6F5990"/><End EntitySet="ZCO_PAPM_F4_SWERT" Role="ToRole_assoc_F3E7115AA50E0700B32A45DB9D6F5990"/></AssociationSet>
+				<AssociationSet Name="assoc_190422DDB97D00C209314ACA4A92FEAD" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_190422DDB97D00C209314ACA4A92FEAD"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_HDR" Role="FromRole_assoc_190422DDB97D00C209314ACA4A92FEAD"/><End EntitySet="ZCO_PAPM_F4_WERKS" Role="ToRole_assoc_190422DDB97D00C209314ACA4A92FEAD"/></AssociationSet>
+				<AssociationSet Name="assoc_FB3A955E2CA0382D635F45E2DFFDC855" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_FB3A955E2CA0382D635F45E2DFFDC855"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_ITM" Role="FromRole_assoc_FB3A955E2CA0382D635F45E2DFFDC855"/><End EntitySet="ZCO_PAPM_F4_WAERS" Role="ToRole_assoc_FB3A955E2CA0382D635F45E2DFFDC855"/></AssociationSet>
+				<AssociationSet Name="assoc_9CADC55AB6AD72E5C18F4ACDB249E580" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_9CADC55AB6AD72E5C18F4ACDB249E580"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_ITM" Role="FromRole_assoc_9CADC55AB6AD72E5C18F4ACDB249E580"/><End EntitySet="ZCO_PAPM_F4_COST_OBJ_TYPE" Role="ToRole_assoc_9CADC55AB6AD72E5C18F4ACDB249E580"/></AssociationSet>
+				<AssociationSet Name="assoc_9A24FA237446CA2B144680BE0C6A40DC" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_9A24FA237446CA2B144680BE0C6A40DC"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_HDR" Role="FromRole_assoc_9A24FA237446CA2B144680BE0C6A40DC"/><End EntitySet="ZCO_PAPM_F4_SEB_GRUPPE" Role="ToRole_assoc_9A24FA237446CA2B144680BE0C6A40DC"/></AssociationSet>
+				<AssociationSet Name="assoc_11092BA467917812434E900D8041D949" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_11092BA467917812434E900D8041D949"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_ITM" Role="FromRole_assoc_11092BA467917812434E900D8041D949"/><End EntitySet="I_CalendarMonth" Role="ToRole_assoc_11092BA467917812434E900D8041D949"/></AssociationSet>
+				<AssociationSet Name="assoc_8A18BEF40062EFB050124D2D1DC78B24" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_8A18BEF40062EFB050124D2D1DC78B24"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_ITM" Role="FromRole_assoc_8A18BEF40062EFB050124D2D1DC78B24"/><End EntitySet="ZCO_PAPM_F4_SRSYSID" Role="ToRole_assoc_8A18BEF40062EFB050124D2D1DC78B24"/></AssociationSet>
+				<AssociationSet Name="assoc_D463D28C3E02BBBC616C6F3A33ACADF3" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_D463D28C3E02BBBC616C6F3A33ACADF3"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_HDR" Role="FromRole_assoc_D463D28C3E02BBBC616C6F3A33ACADF3"/><End EntitySet="ZCO_PAPM_F4_KOKRS" Role="ToRole_assoc_D463D28C3E02BBBC616C6F3A33ACADF3"/></AssociationSet>
+				<AssociationSet Name="assoc_246140C546B8AB996A0081FB800FA3B2" Association="ZCO_AOH_C_SEB_HDR_SRV.assoc_246140C546B8AB996A0081FB800FA3B2"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCO_AOH_C_SEB_ITM" Role="FromRole_assoc_246140C546B8AB996A0081FB800FA3B2"/><End EntitySet="ZCO_AOH_C_SEB_ITM" Role="ToRole_assoc_246140C546B8AB996A0081FB800FA3B2"/></AssociationSet>
+				<FunctionImport Name="ZCO_AOH_C_SEB_HDRActivation" ReturnType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType" EntitySet="ZCO_AOH_C_SEB_HDR"
+					m:HttpMethod="POST" sap:action-for="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType" sap:applicable-path="Activation_ac"><Parameter Name="SebID" Type="Edm.String" Mode="In" MaxLength="32"/><Parameter Name="DraftUUID" Type="Edm.Guid" Mode="In"/><Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/></FunctionImport>
+				<FunctionImport Name="ZCO_AOH_C_SEB_HDREdit" ReturnType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType" EntitySet="ZCO_AOH_C_SEB_HDR"
+					m:HttpMethod="POST" sap:action-for="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType" sap:applicable-path="Edit_ac"><Parameter Name="SebID" Type="Edm.String" Mode="In" MaxLength="32"/><Parameter Name="DraftUUID" Type="Edm.Guid" Mode="In"/><Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/><Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/></FunctionImport>
+				<FunctionImport Name="ZCO_AOH_C_SEB_HDRPreparation" ReturnType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType" EntitySet="ZCO_AOH_C_SEB_HDR"
+					m:HttpMethod="POST" sap:action-for="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType" sap:applicable-path="Preparation_ac"><Parameter Name="SebID" Type="Edm.String" Mode="In" MaxLength="32"/><Parameter Name="DraftUUID" Type="Edm.Guid" Mode="In"/><Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/><Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/></FunctionImport>
+				<FunctionImport Name="ZCO_AOH_C_SEB_HDRValidation" ReturnType="ZCO_AOH_C_SEB_HDR_SRV.ValidationFunctionResult" m:HttpMethod="GET"
+					sap:action-for="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType" sap:applicable-path="Validation_ac"><Parameter Name="SebID" Type="Edm.String" Mode="In" MaxLength="32"/><Parameter Name="DraftUUID" Type="Edm.Guid" Mode="In"/><Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/><Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/></FunctionImport>
+				<FunctionImport Name="ZCO_AOH_C_SEB_ITMPreparation" ReturnType="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" EntitySet="ZCO_AOH_C_SEB_ITM"
+					m:HttpMethod="POST" sap:action-for="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" sap:applicable-path="Preparation_ac"><Parameter Name="SebID" Type="Edm.String" Mode="In" MaxLength="32"/><Parameter Name="SebPosition" Type="Edm.String" Mode="In" MaxLength="6"/><Parameter Name="DraftUUID" Type="Edm.Guid" Mode="In"/><Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/><Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/></FunctionImport>
+				<FunctionImport Name="ZCO_AOH_C_SEB_ITMValidation" ReturnType="ZCO_AOH_C_SEB_HDR_SRV.ValidationFunctionResult" m:HttpMethod="GET"
+					sap:action-for="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" sap:applicable-path="Validation_ac"><Parameter Name="SebID" Type="Edm.String" Mode="In" MaxLength="32"/><Parameter Name="SebPosition" Type="Edm.String" Mode="In" MaxLength="6"/><Parameter Name="DraftUUID" Type="Edm.Guid" Mode="In"/><Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/><Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/></FunctionImport>
+			</EntityContainer>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDR_SRV_Entities/ZCO_AOH_C_SEB_HDR" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.DraftRoot">
+					<Record><PropertyValue Property="ActivationAction" String="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDR_SRV_Entities/ZCO_AOH_C_SEB_HDRActivation"/><PropertyValue Property="EditAction" String="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDR_SRV_Entities/ZCO_AOH_C_SEB_HDREdit"/><PropertyValue Property="PreparationAction" String="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDR_SRV_Entities/ZCO_AOH_C_SEB_HDRPreparation"/><PropertyValue Property="ValidationFunction" String="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDR_SRV_Entities/ZCO_AOH_C_SEB_HDRValidation"/></Record>
+				</Annotation>
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>Activation_ac</PropertyPath>
+								<PropertyPath>Edit_ac</PropertyPath>
+								<PropertyPath>Preparation_ac</PropertyPath>
+								<PropertyPath>Validation_ac</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>Activation_ac</PropertyPath>
+								<PropertyPath>Edit_ac</PropertyPath>
+								<PropertyPath>Preparation_ac</PropertyPath>
+								<PropertyPath>Validation_ac</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDR_SRV_Entities/ZCO_AOH_C_SEB_ITM" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.DraftNode">
+					<Record><PropertyValue Property="PreparationAction" String="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDR_SRV_Entities/ZCO_AOH_C_SEB_ITMPreparation"/><PropertyValue Property="ValidationFunction" String="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDR_SRV_Entities/ZCO_AOH_C_SEB_ITMValidation"/></Record>
+				</Annotation>
+				<Annotation Term="Common.DraftActivationVia">
+					<Collection>
+						<String>ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDR_SRV_Entities/ZCO_AOH_C_SEB_HDR</String>
+					</Collection>
+				</Annotation>
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>Preparation_ac</PropertyPath>
+								<PropertyPath>Validation_ac</PropertyPath>
+								<PropertyPath>ReceiverSystem_fc</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>Preparation_ac</PropertyPath>
+								<PropertyPath>Validation_ac</PropertyPath>
+								<PropertyPath>ReceiverSystem_fc</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType/ControllingArea" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="View for F4 help"/><PropertyValue Property="CollectionPath" String="ZCO_PAPM_F4_KOKRS"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="ControllingArea"/><PropertyValue Property="ValueListProperty" String="ControllingArea"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ControllingAreaName"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/></Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType/SenderCompanyCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="View for company code F4 help"/><PropertyValue Property="CollectionPath" String="ZCO_PAPM_F4_BUKRS"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="SenderCompanyCode"/><PropertyValue Property="ValueListProperty" String="CompanyCode"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CompanyCodeName"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/></Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType/SebGroup" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="View for SEB Group F4 help"/><PropertyValue Property="CollectionPath" String="ZCO_PAPM_F4_SEB_GRUPPE"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="SebID"/><PropertyValue Property="ValueListProperty" String="SebID"/></Record>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="SebGroup"/><PropertyValue Property="ValueListProperty" String="SebGroup"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SebGroupDescription"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/></Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType/Plant" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="View for plant F4"/><PropertyValue Property="CollectionPath" String="ZCO_PAPM_F4_WERKS"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="Plant"/><PropertyValue Property="ValueListProperty" String="Plant"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="PlantName"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType/SenderSystem" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="View for Sender / Receiver System"/><PropertyValue Property="CollectionPath" String="ZCO_PAPM_F4_SRSYSID"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="SenderCompanyCode"/><PropertyValue Property="ValueListProperty" String="CompanyCode"/></Record>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="SenderSystem"/><PropertyValue Property="ValueListProperty" String="SystemId"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/></Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType/OHActive" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="View for OH active F4"/><PropertyValue Property="CollectionPath" String="ZCO_PAPM_F4_OH"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="OHActive"/><PropertyValue Property="ValueListProperty" String="OHActive"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="OHDesc"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/></Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType/SenderCostObjectType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Cost object types F4"/><PropertyValue Property="CollectionPath" String="ZCO_PAPM_F4_COST_OBJ_TYPE"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="SenderCostObjectType"/><PropertyValue Property="ValueListProperty" String="COST_OBJ_TYPE_S"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="objDesc"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType/SenderValuationApproach" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="View for Sender valuation approach"/><PropertyValue Property="CollectionPath" String="ZCO_PAPM_F4_SWERT"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="SenderValuationApproach"/><PropertyValue Property="ValueListProperty" String="SenderValuationApproach"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SVADescription"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/></Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType/Currency" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="View for WAERS F4"/><PropertyValue Property="CollectionPath" String="ZCO_PAPM_F4_WAERS"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="Currency"/><PropertyValue Property="ValueListProperty" String="Currency"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Currency_Text"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/></Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType/ReceiverCompanyCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Receiver company code determination"/><PropertyValue Property="CollectionPath" String="ZCO_PAPM_F4_REC_BUKRS"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="ReceiverCompanyCode"/><PropertyValue Property="ValueListProperty" String="CompanyCode"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CompanyCodeName"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/></Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType/ReceiverSystem" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="View for Sender / Receiver System"/><PropertyValue Property="CollectionPath" String="ZCO_PAPM_F4_SRSYSID"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="ReceiverCompanyCode"/><PropertyValue Property="ValueListProperty" String="CompanyCode"/></Record>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="ReceiverSystem"/><PropertyValue Property="ValueListProperty" String="SystemId"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType/ReceiverCostObjectType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="F4 help for Receiver Object type"/><PropertyValue Property="CollectionPath" String="ZCO_PAPM_F4_COST_OBJ_TYPE_R"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="ReceiverCostObjectType"/><PropertyValue Property="ValueListProperty" String="COST_OBJ_TYPE_R"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="objDesc"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType/AllocationType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="View for OH active F4"/><PropertyValue Property="CollectionPath" String="ZCO_PAPM_F4_VRTYP"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="AllocationType"/><PropertyValue Property="ValueListProperty" String="AllocationType"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="AllocationTypeDescription"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/></Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType/FromPeriod" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Calendar Month"/><PropertyValue Property="CollectionPath" String="I_CalendarMonth"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="FromPeriod"/><PropertyValue Property="ValueListProperty" String="CalendarMonth"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CalendarMonth_Text"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType/FromYear" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Year"/><PropertyValue Property="CollectionPath" String="I_CalendarYear"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="FromYear"/><PropertyValue Property="ValueListProperty" String="CalendarYear"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType/ToPeriod" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Calendar Month"/><PropertyValue Property="CollectionPath" String="I_CalendarMonth"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="ToPeriod"/><PropertyValue Property="ValueListProperty" String="CalendarMonth"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CalendarMonth_Text"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType/ToYear" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Year"/><PropertyValue Property="CollectionPath" String="I_CalendarYear"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="ToYear"/><PropertyValue Property="ValueListProperty" String="CalendarYear"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_WERKSType/PlantCustomer" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Customer"/><PropertyValue Property="CollectionPath" String="I_Customer_VH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="PlantCustomer"/><PropertyValue Property="ValueListProperty" String="Customer"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CityName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Country"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CustomerName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="OrganizationBPName1"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="OrganizationBPName2"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="StreetName"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_PAPM_F4_WERKSType/PlantSupplier" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Supplier"/><PropertyValue Property="CollectionPath" String="I_Supplier_VH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="PlantSupplier"/><PropertyValue Property="ValueListProperty" String="Supplier"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SupplierName"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDR_SRV_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+				<Annotation Term="Aggregation.ApplySupported">
+					<Record>
+						<PropertyValue Property="Transformations">
+							<Collection>
+								<String>aggregate</String>
+								<String>groupby</String>
+								<String>filter</String>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Rollup" EnumMember="None"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType/SebGroupName" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/></Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_HDRType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>SebID</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZCO_AOH_C_SEB_HDR_SRV.ZCO_AOH_C_SEB_ITMType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>SebPosition</PropertyPath>
+						<PropertyPath>SebID</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations><atom:link rel="self"
+				href="https://webidecp-s3td7fnnd5.dispatcher.hana.ondemand.com/destinations/S4C011_WebIDE_SSO/sap/opu/odata/sap/ZCO_AOH_C_SEB_HDR_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"
+				href="https://webidecp-s3td7fnnd5.dispatcher.hana.ondemand.com/destinations/S4C011_WebIDE_SSO/sap/opu/odata/sap/ZCO_AOH_C_SEB_HDR_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
